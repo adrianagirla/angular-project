@@ -1,0 +1,132 @@
+<div class="container">
+      <div class="py-5 text-center">
+        <h2>Programare noua</h2>  
+      </div>
+
+      <form #f="ngForm" (ngSubmit)="save(f.value)">
+        <div class="row g-3">
+          <div class="col-sm-6">
+              <div class="form-group">
+                 <label for="firstname" class="form-label">Nume</label>
+                  <input #firstname="ngModel" ngModel 
+                           name="firstname" 
+                            type="text" 
+                             id="firstName" 
+                              class="form-control" 
+                                placeholder="Nume" 
+                                      required>
+                  <div class="alert alert-danger" 
+                        *ngIf="firstname.touched && firstname.invalid">
+                    Numele este obligatoriu
+                  </div>
+                </div>
+          </div>
+
+          <div class="col-sm-6">
+              <div class="form-group">
+                  <label for="lastname" class="form-label">Prenume</label>
+                  <input #lastname= "ngModel" ngModel 
+                            name="lastname" 
+                               type="text" 
+                                  class="form-control" 
+                                    id="lastname" 
+                                        placeholder="Prenume"  
+                                            required>
+                    <div class="alert alert-danger" 
+                          *ngIf="lastname.touched && lastname.invalid">
+                        Prenumele este obligatoriu
+                    </div>
+                </div>
+          </div>
+        </div>
+
+          <div class="row g-3">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="phone" class="form-label">Telefon</label>
+                    <input #phone = "ngModel" ngModel 
+                            name="phone" 
+                              type="text" 
+                                class="form-control" 
+                                  id="phone" 
+                                    placeholder="Telefon" 
+                                        required>
+                      <div class="alert alert-danger" 
+                            *ngIf="phone.touched && phone.invalid">
+                          Numarul de telefon este obligatoriu
+                      </div>
+                </div>
+            </div>
+  
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="email" class="form-label">E-mail</label>
+                    <div class="input-group has-validation">
+                        <span class="input-group-text">@</span>
+                        <input ngModel name="email" 
+                                  type="email" 
+                                    class="form-control" 
+                                      id="email" 
+                                        placeholder="e-mail" 
+                                           required email="true">
+                    </div>
+                </div>
+            </div>
+          </div>
+
+        <div class="row g-3">
+          <div class="col-sm-6">
+            <div class="form-group">
+
+              <label for="date" class="form-label">Data</label>
+              <div class="input-group">
+                  <input class="form-control" 
+                        [(ngModel)]="date" 
+                         ngbDatepicker 
+                         placeholder="yyyy-mm-dd"
+                         name="date" 
+                         #d="ngbDatepicker">
+                      <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button">
+                      <i class="bi bi-calendar3"></i> 
+                  </button>
+              </div>
+            </div>
+          </div>
+
+          
+
+          <div class="col-sm-6">
+              <div class="form-group">
+                  <label for="hour" class="form-label">Ora</label>
+                  <input ngModel name="hour"
+                            class="form-control" 
+                              list="oraOptiuni" 
+                                id="hour" 
+                                  placeholder="Intervale orare disponible">
+                  <datalist id="oraOptiuni">
+                          <option value="1">08:00-8:30</option>
+                          <option value="2">08:30-9:00</option>
+                          <option value="3">09:00-9:30</option>
+                          <option value="4">09:30-10:00</option>
+                          <option value="5">10:00-10:30</option>
+                          <option value="5">10:30-11:00</option>
+                          <option value="7">11:00-11:30</option>
+                          <option value="8">11:30-12:00</option>
+                  </datalist>
+              </div>
+            </div>
+          </div>
+     
+     
+          <div class="container">
+            <div class="row">
+              <div class="col text-center">
+                <button class="btn btn-secondary btn-lg" type="submit">Salveaza</button>
+                </div>
+            </div>
+        </div>
+          
+  
+      
+    
+

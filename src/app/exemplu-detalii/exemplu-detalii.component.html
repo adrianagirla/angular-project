@@ -1,0 +1,14 @@
+<div *ngIf="programare">
+   <div class="form-control">
+        <span>
+            <label for="diagnosis">Diagnostic </label>
+            <input id="diagnosis" [(ngModel)]="programare.diagnosis"
+            placeholder="Diagnostic">
+        </span>
+        <span class="phone">
+            <label for="phone">Telefon </label>
+            <input id="phone" [(ngModel)]="programare.phone"
+             placeholder="phone">
+        </span>
+    </div>
+</div>

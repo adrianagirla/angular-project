@@ -1,0 +1,31 @@
+<app-exemplu-detalii [programare]="selectedProgramare"></app-exemplu-detalii>
+ <div class="container">
+    <h2 >Programari {{todayWithPipe}}</h2>
+    <table  class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Ora</th>
+          <th scope="col">Pacient</th>
+          <th scope="col">Raport</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="checkbox" 
+        *ngFor="let programare of (programari | async)">
+          <th scope="row">
+          <input type="checkbox" >
+          </th>
+          <td class="ora">{{programare.hour}}</td>
+          <td [class.selected]="programare === selectedProgramare"
+                (click)="onSelect(programare)" 
+                   class="firstname">
+                      {{programare.firstname}} {{programare.lastname}}
+          </td>
+          <td><a class="link-secondary" [routerLink]="['/programari/', programare.id]">Raport medical</a></td>
+         </tr>
+         </tbody>
+       </table>
+ </div>
+
+

@@ -1,0 +1,120 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            Raport medical
+           <strong [(ngModel)]="programare.date">{{programare.date}}</strong> 
+        </div>
+        <div class="card-body">
+            <div class="row mb-4">
+                <div class="col-sm-6">
+                    <h5 class="mb-3">Pacient:</h5>
+                    <div > 
+                    <strong 
+                          ngDefaultControl 
+                              #firstname="ngModel" 
+                                    [(ngModel)]="programare.firstname" 
+                                        name="firstname" 
+                                            id="firstname">
+                            {{programare.firstname}}
+                    </strong>
+                    <span>
+                        <strong
+                             ngDefaultControl 
+                                #lastname="ngModel" 
+                                    [(ngModel)]="programare.lastname" 
+                                         name="lastname" 
+                                            id="lastname">  
+                             {{programare.lastname}}
+                         </strong>
+                    </span>
+                    </div>
+                    <div  
+                        ngDefaultControl 
+                            #cnp="ngModel" 
+                                [(ngModel)]="programare.cnp" 
+                                     name="cnp" 
+                                        id="cnp">
+                            {{programare.cnp}}
+                    </div>
+                    <div 
+                        ngDefaultControl 
+                            #addres="ngModel" 
+                                [(ngModel)]="programare.addres" 
+                                    name="addres" 
+                                        id="addres">
+                            {{programare.addres}}
+                    </div>
+                    <div 
+                        ngDefaultControl 
+                            #email="ngModel" 
+                                [(ngModel)]="programare.email"
+                                    name="email" 
+                                        id="email">
+                            {{programare.email}}
+                    </div>
+                    <div 
+                        ngDefaultControl 
+                            #phone="ngModel" 
+                        [(ngModel)]="programare.phone" 
+                        name="phone" 
+                        id="phone">
+                        {{programare.phone}}
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <span id="parafa">Parafa</span>
+                    <h6 class="mb-3">Medic: </h6>
+                    <div><strong>Prof.Dr Anghelescu</strong></div>
+                    <div>SuperMED</div>
+                    <div>Bucuresti Sector2, str. Cutarica</div>
+                    <div>Email: marek@daniel.com</div>
+                    <div>Telefon: +48 123 456 789</div>
+                </div>
+            </div>
+
+            <form #f="ngForm" (ngSubmit)="save(f.value)">
+        
+                <div class="form-group">
+                    <label for="diagnosis">Diagnostic</label>
+                    <input [(ngModel)]="programare.diagnosis" 
+                            ngModel 
+                                name="diagnosis" 
+                                    #diagnostic="ngModel" 
+                                        id="diagnosis" 
+                                            type="text" 
+                                                class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="history">Anamneza</label>
+                    <textarea 
+                        [(ngModel)]="programare.history" 
+                            name="history" 
+                                #anamneza="ngModel"
+                                     id="history"
+                                         class="form-control" 
+                                            cols="30" rows="10"></textarea>
+                </div> 
+                <div class="form-group">
+                    <label for="treatament">Tratament</label>
+                    <textarea 
+                        [(ngModel)]="programare.treatament"
+                             ngModel name="treatament" 
+                                #tratament="ngModel" 
+                                    id="treatament" 
+                                        class="form-control" 
+                                            cols="30" rows="10"></textarea>
+                </div> 
+                <div class="container">
+                    <div class="row">
+                      <div class="col text-center">
+                        <button class="btn btn-secondary" type="submit">Salveaza</button>
+                      </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+

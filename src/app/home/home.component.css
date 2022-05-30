@@ -1,0 +1,11 @@
+.container {
+    padding: 3rem;
+}
+
+h2 {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+.firstname {
+    cursor: pointer;
+}

@@ -1,0 +1,11 @@
+.container {
+    margin-top: 2rem;
+}
+#parafa{
+    float: right;
+    font-weight: bold;
+}
+
+.form-group {
+    margin: 1rem;
+}

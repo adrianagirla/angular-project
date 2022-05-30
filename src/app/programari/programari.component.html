@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row">
+      <div class="col text-center">
+          <button routerLink="/programare-form" 
+            type="button" 
+            class="btn btn-secondary btn-lg">Programare noua</button>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <h2 style="text-align: center;">Programari </h2>
+    <table id="tabel-programari" class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Data</th>
+                <th scope="col">Ora</th>
+                <th scope="col">Pacient</th>
+                <th scope="col">Telefon</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let programare of (programari | async)">
+                <th scope="row">{{programare.date}}</th>
+                <td>{{programare.hour}}</td>
+                <td>
+                {{programare.firstname}} {{programare.firstname}}
+               </td>
+        <td>{{programare.phone}}</td>
+        <td><button type="button" class="btn btn-secondary btn-sm"
+             title="sterge programare"
+            (click)="delete()">Anuleaza</button></td>
+    </tr>
+</tbody>
+</table>
+</div>
+
